@@ -509,6 +509,8 @@
         .session-body h6 { margin: 0 0 14px; font-size: 1.5rem; font-weight: 600; letter-spacing: -0.025em; }
         .session-body p { margin: 7px 0 0; color: #697b87; font-size: 1.0625rem; line-height: 1.55; }
         .session-body p span { margin-right: 8px; color: var(--muted); font-family: var(--mono); font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; }
+        .session-links { display: flex; flex-wrap: wrap; gap: 0 20px; }
+
         .presentation-link {
             display: inline-block;
             margin-top: 14px;
@@ -660,23 +662,23 @@
     <script>
         const roster2026 = [
             { name: "Jorge Miranda Pinto", inst: "IMF", paper: "Factor Augmented Network Vector Autoregression (FANVAR)", presentation: "assets/presentations/Networks_Factors_MW_Hawaii.pdf" },
-            { name: "Alejandro Rojas-Bernal", inst: "University of Hawaiʻi at Mānoa", paper: "Icarus and Daedalus: Non-Gaussian Size-Dependent Productivity and Aggregate Risk", presentation: "assets/presentations/RojasBernal_Icarus_Daedalus_Slides.pdf" },
-            { name: "Alvaro Silva", inst: "Boston Fed", paper: "Connected for Better or Worse? The Role of Production Networks in Financial Crises", presentation: "assets/presentations/slides-hawaii-Silva.pdf" },
-            { name: "Danial Lashkari", inst: "London School of Economics", paper: "How Do Sectoral Shocks Shape Future GDP Growth?", presentation: "assets/presentations/slides_lashkari.pdf" },
-            { name: "Saroj Bhattarai", inst: "University of Texas at Austin", paper: "Welfare Cost of Inflation in Production Networks", presentation: "assets/presentations/Bhattarai_Slides_UHawaii.pdf" },
-            { name: "Ernest Liu", inst: "Princeton University", paper: "A Network Approach to Geopolitics", presentation: "assets/presentations/ErnestLiu_Hawaii.pdf" },
-            { name: "Julieta Caunedo", inst: "Cornell University", paper: "On the Investment Network and Development", presentation: "assets/presentations/Caunedo_InvestDevelopment_1026.pdf" },
+            { name: "Alejandro Rojas-Bernal", inst: "University of Hawaiʻi at Mānoa", paper: "Icarus and Daedalus: Non-Gaussian Size-Dependent Productivity and Aggregate Risk", presentation: "assets/presentations/RojasBernal_Icarus_Daedalus_Slides.pdf", paperUrl: "https://www.alejandrorojasbernal.com/working-papers/icarus-and-daedalus-non-gaussian-micro-shocks-and-aggregate-productivity-risk/Icarus-and-Daedalus-Non-Gaussian-Micro-Shocks-and-Aggregate-Productivity-Risk.pdf" },
+            { name: "Alvaro Silva", inst: "Boston Fed", paper: "Connected for Better or Worse? The Role of Production Networks in Financial Crises", presentation: "assets/presentations/slides-hawaii-Silva.pdf", paperUrl: "https://asilvub.github.io/assets/papers/SS_Networks_MPRSS_NBER_Dec25.pdf" },
+            { name: "Danial Lashkari", inst: "London School of Economics", paper: "How Do Sectoral Shocks Shape Future GDP Growth?", presentation: "assets/presentations/slides_lashkari.pdf", paperUrl: "https://www.richmondfed.org/-/media/RichmondFedOrg/publications/research/working_papers/2026/wp26-11.pdf" },
+            { name: "Saroj Bhattarai", inst: "University of Texas at Austin", paper: "Welfare Cost of Inflation in Production Networks", presentation: "assets/presentations/Bhattarai_Slides_UHawaii.pdf", paperUrl: "https://afrouzi.com/abw_inflation_welfare.pdf" },
+            { name: "Ernest Liu", inst: "Princeton University", paper: "A Network Approach to Geopolitics", presentation: "assets/presentations/ErnestLiu_Hawaii.pdf", paperUrl: "https://ernestliu.scholar.princeton.edu/document/281" },
+            { name: "Julieta Caunedo", inst: "Cornell University", paper: "On the Investment Network and Development", presentation: "assets/presentations/Caunedo_InvestDevelopment_1026.pdf", paperUrl: "https://www.dropbox.com/scl/fi/r2gfx2s2rnxwfmlpa495l/Draft_092025.pdf?dl=0&rlkey=kj6whx6w0oxem0j1c1lwq8vkx&st=gkgv8rhn" },
             { name: "Nitya Pandalai Nayar", inst: "University of Texas at Austin", paper: "Supply Chain Risk, Trade and Economic Fragility", presentation: "assets/presentations/PandalaiNayar_Hawaii.pdf" },
             { name: "Christian vom Lehn", inst: "Brigham Young University", paper: "Putty-Clay Production Networks", presentation: "assets/presentations/vLW putty clay slides.pdf" },
-            { name: "Steve Wu", inst: "University of California San Diego", paper: "Team Persistent or Team Transitory? Sectoral Linkage and Inflation Persistence", presentation: "assets/presentations/Wu_inflation.pdf" },
-            { name: "Sophie Osotimehin", inst: "University of Quebec at Montreal", paper: "The Long-Run Effects of Transportation Productivity on the US Economy", presentation: "assets/presentations/Osotimehin_IOT_slides.pdf" },
+            { name: "Steve Wu", inst: "University of California San Diego", paper: "Team Persistent or Team Transitory? Sectoral Linkage and Inflation Persistence", presentation: "assets/presentations/Wu_inflation.pdf", paperUrl: "https://drive.google.com/file/d/1syQlY5jHonM2nL18FOmfKlOGGVT1rjvP/view?usp=sharing" },
+            { name: "Sophie Osotimehin", inst: "University of Quebec at Montreal", paper: "The Long-Run Effects of Transportation Productivity on the US Economy", presentation: "assets/presentations/Osotimehin_IOT_slides.pdf", paperUrl: "https://www.dropbox.com/scl/fi/ns80e63osgpg9w85wusbu/COP_Transportation_main.pdf?dl=0&rlkey=v93b75qvh28ilwdnoyxgu5x2g" },
             { name: "Alireza Tahbaz-Salehi", inst: "Northwestern University", paper: "Recombinant Technology: Measurement and Theory", presentation: "assets/presentations/Tahbaz-Salehi-Slides.pdf" },
             { name: "Robert Minton", inst: "Fed Board", paper: "The Many Slopes of the Phillips Curve: Evidence from U.S. Industries", presentation: "assets/presentations/Minton_nkpc_slopes.pdf" },
-            { name: "Yasutaka Koike", inst: "UNC Chapel Hill", paper: "Aggregating Distortions in Networks with Multi-Product Firms", presentation: "assets/presentations/KoikeMartner_Aggregating_Distortions_Networks_2026.pdf" },
-            { name: "George Nikolakoudis", inst: "Yale University", paper: "Incomplete Information in Production Networks", presentation: "assets/presentations/Nikolakoudis_IncompleteInfo.pdf" },
-            { name: "Kunal Sangani", inst: "Columbia Business School", paper: "Pricing Off Accounting Costs", presentation: "assets/presentations/ksangani_PricingOffAccountingCosts.pdf" },
+            { name: "Yasutaka Koike", inst: "UNC Chapel Hill", paper: "Aggregating Distortions in Networks with Multi-Product Firms", presentation: "assets/presentations/KoikeMartner_Aggregating_Distortions_Networks_2026.pdf", paperUrl: "https://yasutakakoike.com/files/papers/aggregating-distortions.pdf" },
+            { name: "George Nikolakoudis", inst: "Yale University", paper: "Incomplete Information in Production Networks", presentation: "assets/presentations/Nikolakoudis_IncompleteInfo.pdf", paperUrl: "https://www.nikolakoudis.com/JMP.pdf" },
+            { name: "Kunal Sangani", inst: "Columbia Business School", paper: "Pricing Off Accounting Costs", presentation: "assets/presentations/ksangani_PricingOffAccountingCosts.pdf", paperUrl: "https://kunalsangani.com/files/fifo_pricing_live.pdf" },
             { name: "Pierre-Daniel Sarte", inst: "Richmond Fed" },
-            { name: "Edouard Schaal", inst: "CREI, ICREA, UPF, BSE", paper: "Echoes and Delays: Time-to-Build in Production Networks", presentation: "assets/presentations/Schaal - Time-2-Build.pdf" }
+            { name: "Edouard Schaal", inst: "CREI, ICREA, UPF, BSE", paper: "Echoes and Delays: Time-to-Build in Production Networks", presentation: "assets/presentations/Schaal - Time-2-Build.pdf", paperUrl: "https://drive.google.com/file/d/11pgbvxOEArUl-fnvkU0rsaTbvovSFxSU/view?usp=drive_link" }
         ];
 
         const editions = {
@@ -711,35 +713,35 @@
                     {
                         day: "Friday, October 23",
                         sessions: [
-                            { time: "9:00–9:40", title: roster2026[1].paper, author: roster2026[1].name, inst: roster2026[1].inst, presentation: roster2026[1].presentation },
-                            { time: "9:40–10:20", title: roster2026[3].paper, author: roster2026[3].name, inst: roster2026[3].inst, presentation: roster2026[3].presentation },
+                            { time: "9:00–9:40", title: roster2026[1].paper, author: roster2026[1].name, inst: roster2026[1].inst, presentation: roster2026[1].presentation, paperUrl: roster2026[1].paperUrl },
+                            { time: "9:40–10:20", title: roster2026[3].paper, author: roster2026[3].name, inst: roster2026[3].inst, presentation: roster2026[3].presentation, paperUrl: roster2026[3].paperUrl },
                             { time: "10:20–10:35", title: "Coffee Break", type: "admin" },
-                            { time: "10:35–11:15", title: roster2026[12].paper, author: roster2026[12].name, inst: roster2026[12].inst, presentation: roster2026[12].presentation },
-                            { time: "11:15–12:05", title: "Keynote: " + roster2026[4].paper, author: roster2026[4].name, inst: roster2026[4].inst, presentation: roster2026[4].presentation },
+                            { time: "10:35–11:15", title: roster2026[12].paper, author: roster2026[12].name, inst: roster2026[12].inst, presentation: roster2026[12].presentation, paperUrl: roster2026[12].paperUrl },
+                            { time: "11:15–12:05", title: "Keynote: " + roster2026[4].paper, author: roster2026[4].name, inst: roster2026[4].inst, presentation: roster2026[4].presentation, paperUrl: roster2026[4].paperUrl },
                             { time: "12:05–1:05", title: "Lunch", type: "admin" },
-                            { time: "1:05–1:45", title: roster2026[2].paper, author: roster2026[2].name, inst: roster2026[2].inst, presentation: roster2026[2].presentation },
-                            { time: "1:45–2:25", title: roster2026[8].paper, author: roster2026[8].name, inst: roster2026[8].inst, presentation: roster2026[8].presentation },
+                            { time: "1:05–1:45", title: roster2026[2].paper, author: roster2026[2].name, inst: roster2026[2].inst, presentation: roster2026[2].presentation, paperUrl: roster2026[2].paperUrl },
+                            { time: "1:45–2:25", title: roster2026[8].paper, author: roster2026[8].name, inst: roster2026[8].inst, presentation: roster2026[8].presentation, paperUrl: roster2026[8].paperUrl },
                             { time: "2:25–2:40", title: "Coffee Break", type: "admin" },
-                            { time: "2:40–3:20", title: roster2026[5].paper, author: roster2026[5].name, inst: roster2026[5].inst, presentation: roster2026[5].presentation },
-                            { time: "3:20–4:00", title: roster2026[7].paper, author: roster2026[7].name, inst: roster2026[7].inst, presentation: roster2026[7].presentation },
-                            { time: "4:00–4:40", title: roster2026[17].paper, author: roster2026[17].name, inst: roster2026[17].inst, presentation: roster2026[17].presentation },
+                            { time: "2:40–3:20", title: roster2026[5].paper, author: roster2026[5].name, inst: roster2026[5].inst, presentation: roster2026[5].presentation, paperUrl: roster2026[5].paperUrl },
+                            { time: "3:20–4:00", title: roster2026[7].paper, author: roster2026[7].name, inst: roster2026[7].inst, presentation: roster2026[7].presentation, paperUrl: roster2026[7].paperUrl },
+                            { time: "4:00–4:40", title: roster2026[17].paper, author: roster2026[17].name, inst: roster2026[17].inst, presentation: roster2026[17].presentation, paperUrl: roster2026[17].paperUrl },
                             { time: "6:00 PM", title: "Conference Dinner", type: "admin" }
                         ]
                     },
                     {
                         day: "Saturday, October 24",
                         sessions: [
-                            { time: "9:00–9:40", title: roster2026[6].paper, author: roster2026[6].name, inst: roster2026[6].inst, presentation: roster2026[6].presentation },
-                            { time: "9:40–10:20", title: roster2026[10].paper, author: roster2026[10].name, inst: roster2026[10].inst, presentation: roster2026[10].presentation },
+                            { time: "9:00–9:40", title: roster2026[6].paper, author: roster2026[6].name, inst: roster2026[6].inst, presentation: roster2026[6].presentation, paperUrl: roster2026[6].paperUrl },
+                            { time: "9:40–10:20", title: roster2026[10].paper, author: roster2026[10].name, inst: roster2026[10].inst, presentation: roster2026[10].presentation, paperUrl: roster2026[10].paperUrl },
                             { time: "10:20–10:35", title: "Coffee Break", type: "admin" },
-                            { time: "10:35–11:15", title: roster2026[14].paper, author: roster2026[14].name, inst: roster2026[14].inst, presentation: roster2026[14].presentation },
-                            { time: "11:15–12:05", title: "Keynote: " + roster2026[11].paper, author: roster2026[11].name, inst: roster2026[11].inst, presentation: roster2026[11].presentation },
+                            { time: "10:35–11:15", title: roster2026[14].paper, author: roster2026[14].name, inst: roster2026[14].inst, presentation: roster2026[14].presentation, paperUrl: roster2026[14].paperUrl },
+                            { time: "11:15–12:05", title: "Keynote: " + roster2026[11].paper, author: roster2026[11].name, inst: roster2026[11].inst, presentation: roster2026[11].presentation, paperUrl: roster2026[11].paperUrl },
                             { time: "12:05–1:05", title: "Lunch", type: "admin" },
-                            { time: "1:05–1:45", title: roster2026[0].paper, author: roster2026[0].name, inst: roster2026[0].inst, presentation: roster2026[0].presentation },
-                            { time: "1:45–2:25", title: roster2026[15].paper, author: roster2026[15].name, inst: roster2026[15].inst, presentation: roster2026[15].presentation },
+                            { time: "1:05–1:45", title: roster2026[0].paper, author: roster2026[0].name, inst: roster2026[0].inst, presentation: roster2026[0].presentation, paperUrl: roster2026[0].paperUrl },
+                            { time: "1:45–2:25", title: roster2026[15].paper, author: roster2026[15].name, inst: roster2026[15].inst, presentation: roster2026[15].presentation, paperUrl: roster2026[15].paperUrl },
                             { time: "2:25–2:40", title: "Coffee Break", type: "admin" },
-                            { time: "2:40–3:20", title: roster2026[9].paper, author: roster2026[9].name, inst: roster2026[9].inst, presentation: roster2026[9].presentation },
-                            { time: "3:20–4:00", title: roster2026[13].paper, author: roster2026[13].name, inst: roster2026[13].inst, presentation: roster2026[13].presentation }
+                            { time: "2:40–3:20", title: roster2026[9].paper, author: roster2026[9].name, inst: roster2026[9].inst, presentation: roster2026[9].presentation, paperUrl: roster2026[9].paperUrl },
+                            { time: "3:20–4:00", title: roster2026[13].paper, author: roster2026[13].name, inst: roster2026[13].inst, presentation: roster2026[13].presentation, paperUrl: roster2026[13].paperUrl }
                         ]
                     }
                 ]
@@ -833,7 +835,10 @@
                         <h6>${session.title}</h6>
                         <p><span>Presenter:</span>${session.author}${session.inst ? `, ${session.inst}` : ""}</p>
                         ${session.discussant ? `<p><span>Discussant:</span>${session.discussant}, ${session.discussantInst}</p>` : ""}
+                        <div class="session-links">
+                            ${session.paperUrl ? `<a class="presentation-link" href="${session.paperUrl.replace(/&/g, "&amp;")}" target="_blank" rel="noopener noreferrer" aria-label="Paper by ${session.author} (opens in a new tab)">Paper ↗</a>` : ""}
                         ${session.presentation ? `<a class="presentation-link" href="${encodeURI(session.presentation)}" target="_blank" rel="noopener noreferrer" aria-label="Presentation by ${session.author} (PDF, opens in a new tab)">Presentation (PDF) ↗</a>` : ""}
+                        </div>
                     </div>
                     <div class="session-arrow">↗</div>
                 </article>
